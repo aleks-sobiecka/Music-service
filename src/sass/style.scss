@@ -1,0 +1,24 @@
+// Bootstrap
+@import "./bootstrap/functions";
+@import "./bootstrap/variables";
+@import "./bootstrap/mixins";
+@import "./bootstrap/utilities";
+@import "./bootstrap/grid";
+@import "./bootstrap/helpers";
+@import "./bootstrap/utilities/api";
+
+//normalize
+@import "./normalize";
+
+// variables
+@import "./variables";
+
+// common styles
+@import "./global";
+@import "./layout";
+@import "./typography";
+
+//pages
+@import "./pages/homepage.scss";
+@import "./pages/search.scss";
+@import "./pages/discover.scss";
