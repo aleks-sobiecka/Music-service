@@ -5,3 +5,59 @@ Dobrze poszukać też uniwersalnych elementów.
 Może np. w kilku miejscach powtarza się podobny przycisk? 
 Może kilka list wygląda podobnie? 
 Odnajdź takie powtarzające się elementy i dodaj dla nich klasy. */
+
+body {
+    color: $lightColor;
+    font-family: $font-four;
+}
+
+.header {
+    background-image: 
+    linear-gradient(180deg,
+    rgba(0, 0, 0, 0),
+    70%,
+    rgb(1, 0, 0)),
+    url("/images/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+}
+
+h1 {
+    position: absolute;
+    top: 130px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+h2 {
+    position: absolute;
+    top: 280px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.main-nav {
+    background: $backgroundColor;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 27px;
+    font-size: 14px;
+    padding: 20px 0;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: $lightColor;
+    padding: 10px;
+}
+
+#pages {
+    background: $backgroundColor;
+}
+

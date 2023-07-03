@@ -3,3 +3,18 @@
 /* Następnie warto zająć się plikiem typography.scss. 
 Widzisz jakieś powtarzające się nagłówki czy style dla tekstu? 
 Warto przygotować odpowiednie klasy. */
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 80px;
+    letter-spacing: 30px;
+}
+
+h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 5px;
+    line-height: 32px;
+}
