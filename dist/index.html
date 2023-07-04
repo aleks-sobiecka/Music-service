@@ -20,10 +20,39 @@
     </div>
 
     <div id="pages">
-        <section id="home">HOME</section>
-        <secion id="search">SEARCH</secion>
-        <section id="discover">DISCOVER</section>
+        <section id="home" class="active">
+            <div id="home-wrapper" class="home-wrapper container"></div>
+        </section>
+        <section id="search">
+            <div id="search-wrapper" class="search-wrapper container">SEARCH</div>
+        </section>
+        <section id="discover">
+            <div id="discover-wrapper" class="discover-wrapper container">DISOVER</div>
+        </section>
     </div>
+
+    <script id="template-home" type="text/x-handlebars-template">
+        <div class="home-page">
+            HOME page check from template
+        </div>
+    </script>
+
+    <script id="template-songs-list" type="text/x-handlebars-template">
+        <article class="song">
+            <header class="song_header">
+                <h3 class="song_name">{{ title }} 
+                </h3>
+            </header>
+        </article>
+    </script>
+
+    <script id="template-search" type="text/x-handlebars-template">
+    </script>
+
+    <script id="template-discover" type="text/x-handlebars-template">
+    </script>
+
+
 
 
 

@@ -1,4 +1,7 @@
 import { select, classNames, settings } from './settings.js';
+import Home from './components/Home.js';
+import Song from './components/Song.js';
+
 
 const app = {
   initPages: function(){
@@ -45,32 +48,46 @@ const app = {
       page.classList.toggle(classNames.pages.active, page.id == pageId);
     }
   
-    /* add class "active" to matching links, remove from non-maching */
-    for(let link of thisApp.navLinks){
-      link.classList.toggle(
-        classNames.nav.active, 
-        link.getAttribute('href') == '#' + pageId
-      );
-    }
-  
   },
-  
+
+  initSongs: function(){
+    const thisApp = this;
+
+    for(let songData in thisApp.data.songs){
+      new Song(thisApp.data.songs[songData].id, thisApp.data.songs[songData]);
+    }
+  },
 
   initData: function() {
+    const thisApp = this;
+
+    thisApp.data = {};
+
     const url = settings.db.url + '/' + settings.db.songs;
-    this.data = {};
     fetch(url)
       .then((rawResponse) => {
         return rawResponse.json();
       })
       .then((parsedResponse) => {
-        this.data.songs = parsedResponse;
+        thisApp.data.songs = parsedResponse;
+
+        /* execute initMenu method */
+        thisApp.initSongs();
       });
+  },
+
+  initHome: function(){
+    const thisApp = this;
+
+    thisApp.homeElem = document.querySelector(select.containerOf.home);
+    thisApp.home = new Home(thisApp.homeElem, thisApp.dataHome);
   },
 
   init: function() {
     const thisApp = this;
     thisApp.initData();
+    thisApp.initPages();
+    thisApp.initHome();
   },
 };
 
