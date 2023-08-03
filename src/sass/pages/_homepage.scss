@@ -1,0 +1,119 @@
+/* homepage */
+.song {
+  margin: 50px 0;
+}
+
+.song_name {
+  margin: 80px 0 40px 0;
+}
+
+.player {
+  margin: 0 auto;
+}
+
+.green-audio-player {
+  width: 520px;
+}
+
+.green-audio-player .slider .gap-progress .pin {
+  background-color: $primaryColor;
+}
+
+.green-audio-player .slider .gap-progress {
+  background-color: $primaryColor;
+}
+
+.category_ranking {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+
+.category_ranking h6 {
+  padding: 0 30px;
+}
+
+.subscribe {
+  background-image: url("/images/subscribe.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 1150px;
+  margin-top: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.subscribe-title {
+  text-transform: uppercase;
+  margin-top: -60px;
+}
+
+.subscribe-title span {
+  font-weight: 600;
+}
+
+.subscribe-wrapper {
+  margin: 0 300px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 200px 0 100px 0;
+
+}
+
+.join-now{
+  flex: 0 0 50%;
+  text-align: left;
+}
+
+.artist {
+  flex: 0 0 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+.artist-surname {
+  padding-left: 80px;
+}
+
+.artist-surname span {
+  color: $primaryColor;
+}
+
+.album {
+  flex: 0 0 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.new-album {
+  text-transform: uppercase;
+  color: $secondaryColor;
+}
+
+.join-now button {
+  text-transform: uppercase;
+  background-color: $primaryColor;
+  color: $lightColor;
+  font-size: 40px;
+  height: 133px;
+  width: 313px;
+  border-radius: 7px;
+  border: 0px;
+  letter-spacing: 5px;
+  line-height: 16px;
+}
+
+.picture {
+  position: absolute;
+  right: 320px;
+  top: 120px;
+}

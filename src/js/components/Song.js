@@ -25,7 +25,9 @@ class Song {
 
     /* add element to list */
     songsListContainer.appendChild(thisSong.element);
+
   }
+
 
 }
 

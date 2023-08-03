@@ -47,6 +47,14 @@ const app = {
     for(let page of thisApp.pages){
       page.classList.toggle(classNames.pages.active, page.id == pageId);
     }
+
+    /* add class "active" to matching links, remove from non-maching */
+    for(let link of thisApp.navLinks){
+      link.classList.toggle(
+        classNames.nav.active, 
+        link.getAttribute('href') == '#' + pageId
+      );
+    }
   
   },
 
@@ -56,6 +64,13 @@ const app = {
     for(let songData in thisApp.data.songs){
       new Song(thisApp.data.songs[songData].id, thisApp.data.songs[songData]);
     }
+
+    // eslint-disable-next-line no-undef
+    GreenAudioPlayer.init({
+      selector: '.player', // inits Green Audio Player on each audio container that has class "player"
+      stopOthersOnPlay: true
+    });
+
   },
 
   initData: function() {
@@ -90,5 +105,6 @@ const app = {
     thisApp.initHome();
   },
 };
+
 
 app.init();

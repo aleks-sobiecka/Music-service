@@ -5,16 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Music Service</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/css/green-audio-player.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header class="header">
-    <h1>Taste</h1>
-    <h2>Engage <br>In <br>Art</h2>
+        <h1>Tast<span>e</span></h1>
+        <h2>Engage <br>In <br>Art</h2>
     </header>
 
     <div class="main-nav">
-        <a href="#home">Home</a>
+        <a href="#home" class="active">Home</a>
         <a href="#search">Search</a>
         <a href="#discover">Discover</a>
     </div>
@@ -22,6 +23,27 @@
     <div id="pages">
         <section id="home" class="active">
             <div id="home-wrapper" class="home-wrapper container"></div>
+            <div class="subscribe-section">
+                <div class="subscribe">
+                    <h3 class="subscribe-title"><span>Subscribe</span> now</h3>
+                    <div class="subscribe-wrapper">
+                        <div class="join-now">
+                            <button type="submit">Join now</button>
+                        </div>
+                        <div class="artist">
+                            <h3 class="artist-name">Dean</h3>
+                            <h3 class="artist-surname">Hen<span class="artist-color">son</span></h3>
+                        </div>
+                        <div class="album">
+                            <h4 class="new-album">New album</h4>
+                            <h4 class="available">Available only for subscribers</h4>
+                        </div>
+                    </div>
+                    <div class="picture">
+                        <img src="/images/artist.jpg" alt="1">
+                    </div>
+                </div>
+            </div>
         </section>
         <section id="search">
             <div id="search-wrapper" class="search-wrapper container">SEARCH</div>
@@ -31,17 +53,28 @@
         </section>
     </div>
 
+    <div class="footer">
+        <p>All rights reserved</p>
+    </div>
+
     <script id="template-home" type="text/x-handlebars-template">
         <div class="home-page">
-            HOME page check from template
         </div>
     </script>
 
     <script id="template-songs-list" type="text/x-handlebars-template">
         <article class="song">
             <header class="song_header">
-                <h3 class="song_name">{{ title }} 
-                </h3>
+                <h5 class="song_name">{{ author }} - {{ title }}</h5>
+                <div class="player">
+                    <audio>
+                        <source src="/vendor/songs/{{ filename }}" type="audio/mpeg">
+                    </audio>
+                </div>
+                <div class="category_ranking">
+                    <h6>Categories: {{ categories }}</h6>
+                    <h6>#{{ ranking }} in the ranking</h6>
+                </div>
             </header>
         </article>
     </script>
@@ -57,6 +90,7 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/js/green-audio-player.min.js"></script>
     <script src="js/script.js" type="module"></script>
 </body>
 </html>

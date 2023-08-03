@@ -17,6 +17,7 @@ class Home{
     const generatedDOM = utils.createDOMFromHTML(generatedHTML);
     thisHome.dom.wrapper.appendChild(generatedDOM);
   }
+
 }
 
 export default Home;

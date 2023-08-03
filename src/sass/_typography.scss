@@ -1,20 +1,60 @@
-/* h1, h2, title */
-
-/* Następnie warto zająć się plikiem typography.scss. 
-Widzisz jakieś powtarzające się nagłówki czy style dla tekstu? 
-Warto przygotować odpowiednie klasy. */
-
+//TASTE
 h1 {
-  text-align: center;
   text-transform: uppercase;
-  font-size: 80px;
-  letter-spacing: 30px;
+  font-size: 200px;
+  letter-spacing: 120px;
 }
 
+//ENGAGE IN ART
 h2 {
-  text-align: center;
   text-transform: uppercase;
-  font-size: 16px;
-  letter-spacing: 5px;
-  line-height: 32px;
+  font-size: 36px;
+  letter-spacing: 11px;
+  line-height: 72px;
+}
+
+// SUBSCRIBE NOW and Sean Henson
+h3 {
+  text-align: center;
+  font-size: 100px;
+  letter-spacing: 20px;
+  margin: 0;
+}
+
+// NEW ALBUM
+h4 {
+  font-size: 40px;
+  letter-spacing: 8px;
+  text-align: right;
+  font-weight: 700;
+}
+
+
+// title on page
+/* title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 60px;
+    letter-spacing: 12px;
+    line-height: 27px;
+    color: $secondaryColor;
+    font-family: $font-four;
+
+} */
+
+//title of the song and artist name
+h5 {
+  font-size: 30px;
+  letter-spacing: 2px;
+  line-height: 27px;
+  font-family: $font-four;
+}
+
+// text under song
+h6 {
+  font-size: 20px;
+  letter-spacing: 2px;
+  line-height: 27px;
+  color: $secondaryColor;
+  font-family: $font-three;
 }
