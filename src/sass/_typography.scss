@@ -31,16 +31,15 @@ h4 {
 
 
 // title on page
-/* title {
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 60px;
-    letter-spacing: 12px;
-    line-height: 27px;
-    color: $secondaryColor;
-    font-family: $font-four;
+title {
+  display: block;
+  text-transform: uppercase;
+  font-size: 60px;
+  letter-spacing: 12px;
+  color: $secondaryColor;
+  font-family: $font-four;
 
-} */
+}
 
 //title of the song and artist name
 h5 {
@@ -48,6 +47,7 @@ h5 {
   letter-spacing: 2px;
   line-height: 27px;
   font-family: $font-four;
+  font-weight: 600;
 }
 
 // text under song

@@ -1,1 +1,46 @@
 /* search */
+
+.search-section {
+    margin: 50px 0;
+}
+
+.search-title {
+    height: 60px;
+    margin: 50px 0;
+}
+
+.search-name {
+    font-size: 30px;
+    letter-spacing: 6px;
+    color: $secondaryColor;
+    font-weight: 600;
+    font-family: $font-four;
+    line-height: 52px;
+}
+
+.search-form button {
+    font-size: 20px;
+    width: 140px;
+    height: 61px;
+    letter-spacing: 4px;
+    line-height: 27px;
+    font-weight: 600;
+}
+
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.search-input input {
+    margin: 0 50px;
+    height: 61px;
+    width: 357px;
+    border-radius: 7px;
+    font-size: 30px;
+}
+
+.search-result h5 {
+    letter-spacing: 6px;
+}

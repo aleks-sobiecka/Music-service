@@ -28,7 +28,7 @@
                     <h3 class="subscribe-title"><span>Subscribe</span> now</h3>
                     <div class="subscribe-wrapper">
                         <div class="join-now">
-                            <button type="submit">Join now</button>
+                            <button type="submit" class="btn-1">Join now</button>
                         </div>
                         <div class="artist">
                             <h3 class="artist-name">Dean</h3>
@@ -46,10 +46,21 @@
             </div>
         </section>
         <section id="search">
-            <div id="search-wrapper" class="search-wrapper container">SEARCH</div>
+            <div class="search-section">
+                <title class="search-title">Search</title>
+                <div class="search-form">
+                    <div class="search-name">Name</div>
+                    <div class="search-input">
+                        <input type="text">
+                    </div>
+                    <button type="submit" class="btn-1">Search</button>
+                </div>
+            </div>
+            <div id="search-result-wrapper" class="search-result-wrapper container"></div>
+            <div id="search-wrapper" class="search-wrapper container"></div>
         </section>
         <section id="discover">
-            <div id="discover-wrapper" class="discover-wrapper container">DISOVER</div>
+            <div id="discover-wrapper" class="discover-wrapper container">DISOVER song</div>
         </section>
     </div>
 
@@ -77,6 +88,12 @@
                 </div>
             </header>
         </article>
+    </script>
+
+    <script id="template-search-result" type="text/x-handlebars-template">
+        <div>
+            <h5 class="search-result">We have found {{ number }} songs...</h5>
+        </div>
     </script>
 
     <script id="template-search" type="text/x-handlebars-template">
