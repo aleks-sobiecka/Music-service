@@ -1,21 +1,42 @@
-import {templates} from './../settings.js';
+import {templates, select} from './../settings.js';
 import utils from './../utils.js';
+import Song from './Song.js';
 
 class Home{
-  constructor (element){
+  constructor(AllSongsList){
     const thisHome = this;
 
-    thisHome.render(element);
+    thisHome.AllSongsList = AllSongsList;
+
+    thisHome.render();
+    thisHome.initSong();
   }
-  render(element){
+
+  render(){
     const thisHome = this;
 
     thisHome.dom = {};
-    thisHome.dom.wrapper = element;
+    thisHome.dom.wrapper = document.querySelector(select.containerOf.home);
 
-    const generatedHTML = templates.home(thisHome.dom.wrapper);
+    const generatedHTML = templates.search(thisHome.dom.wrapper);
     const generatedDOM = utils.createDOMFromHTML(generatedHTML);
     thisHome.dom.wrapper.appendChild(generatedDOM);
+  }
+
+  initSong(){
+    const thisHome = this;
+
+    for(let songData in thisHome.AllSongsList){
+      new Song(thisHome.AllSongsList[songData].id, thisHome.AllSongsList[songData], select.containerOf.home);
+    }
+
+    // eslint-disable-next-line no-undef
+    GreenAudioPlayer.init({
+      selector: '.player', // inits Green Audio Player on each audio container that has class "player"
+      stopOthersOnPlay: true
+    });
+
+    
   }
 
 }

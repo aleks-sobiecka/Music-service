@@ -1,19 +1,26 @@
 import { select, classNames, settings } from './settings.js';
 import Home from './components/Home.js';
-import Song from './components/Song.js';
+import Search from './components/Search.js';
+import Discover from './components/Discover.js';
 
 
 const app = {
+  //wyświetla poszczególne podstrony
   initPages: function(){
     const thisApp = this;
   
+    //znalezienie wszystkich dzieci kontenera stron (czyli sekcje podstron)
     thisApp.pages = document.querySelector(select.containerOf.pages).children;
+    //znalezienie wszystkich linków
     thisApp.navLinks = document.querySelectorAll(select.nav.links);
   
+    //automatyczne wyświetlenie wcześniej klikniętej strony
     const idFromHash = window.location.hash.replace('#/', '');
   
+    //zmienna która pokazuje hash domyślnej strony
     let pageMatchingHash = thisApp.pages[0].id;
   
+    //sprawdzamy czy hash pasuje do jakiejś strony
     for(let page of thisApp.pages){
       if(page.id == idFromHash){
         pageMatchingHash = page.id;
@@ -21,8 +28,10 @@ const app = {
       }
     }
   
+    //wyświelanie strony pasującej do hash
     thisApp.activatePage(pageMatchingHash);
   
+    //aktywowanie klikniętej podstrony
     for(let link of thisApp.navLinks){
       link.addEventListener('click', function(event){
         event.preventDefault();
@@ -40,6 +49,7 @@ const app = {
     }
   },
   
+  //aktywowanie wybranej lub domyślnej podstrony
   activatePage: function(pageId){
     const thisApp = this;
   
@@ -58,21 +68,7 @@ const app = {
   
   },
 
-  initSongs: function(){
-    const thisApp = this;
-
-    for(let songData in thisApp.data.songs){
-      new Song(thisApp.data.songs[songData].id, thisApp.data.songs[songData]);
-    }
-
-    // eslint-disable-next-line no-undef
-    GreenAudioPlayer.init({
-      selector: '.player', // inits Green Audio Player on each audio container that has class "player"
-      stopOthersOnPlay: true
-    });
-
-  },
-
+  //pobiera z serwera obiekt z danymi i przypisuje go do thisApp.data - łatwy dostęp do danych
   initData: function() {
     const thisApp = this;
 
@@ -86,23 +82,16 @@ const app = {
       .then((parsedResponse) => {
         thisApp.data.songs = parsedResponse;
 
-        /* execute initMenu method */
-        thisApp.initSongs();
+        new Home (thisApp.data.songs);
+        new Search (thisApp.data.songs);
+        new Discover (thisApp.data.songs);
       });
-  },
-
-  initHome: function(){
-    const thisApp = this;
-
-    thisApp.homeElem = document.querySelector(select.containerOf.home);
-    thisApp.home = new Home(thisApp.homeElem, thisApp.dataHome);
   },
 
   init: function() {
     const thisApp = this;
     thisApp.initData();
     thisApp.initPages();
-    thisApp.initHome();
   },
 };
 

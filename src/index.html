@@ -22,7 +22,9 @@
 
     <div id="pages">
         <section id="home" class="active">
-            <div id="home-wrapper" class="home-wrapper container"></div>
+            <div id="home-wrapper" class="home-wrapper container">
+                <div id="song-wrapper" class="song-wrapper1"></div>
+            </div>
             <div class="subscribe-section">
                 <div class="subscribe">
                     <h3 class="subscribe-title"><span>Subscribe</span> now</h3>
@@ -47,20 +49,26 @@
         </section>
         <section id="search">
             <div class="search-section">
-                <title class="search-title">Search</title>
+                <p class="search-title title">Search</p>
                 <div class="search-form">
                     <div class="search-name">Name</div>
                     <div class="search-input">
-                        <input type="text">
+                        <input type="text" class="input-search">
                     </div>
-                    <button type="submit" class="btn-1">Search</button>
+                    <button type="submit" class="btn-1 btn-search">Search</button>
                 </div>
             </div>
-            <div id="search-result-wrapper" class="search-result-wrapper container"></div>
-            <div id="search-wrapper" class="search-wrapper container"></div>
+            <div id="search-wrapper" class="search-wrapper container">
+                <div id="search-result-wrapper" class="search-result-wrapper"></div>
+            </div>
         </section>
         <section id="discover">
-            <div id="discover-wrapper" class="discover-wrapper container">DISOVER song</div>
+            <div class="discover-section">
+                <p class="discover-title title">Discover</p>
+                <h5 class="discover-result">Give it a try!</h5>
+            </div>
+            <div id="discover-wrapper" class="discover-wrapper container">
+            </div>
         </section>
     </div>
 
@@ -90,16 +98,20 @@
         </article>
     </script>
 
+    <script id="template-search" type="text/x-handlebars-template">
+        <div class="search-page">
+        </div>
+    </script>
+
     <script id="template-search-result" type="text/x-handlebars-template">
-        <div>
+        <div class="search-result-page">
             <h5 class="search-result">We have found {{ number }} songs...</h5>
         </div>
     </script>
 
-    <script id="template-search" type="text/x-handlebars-template">
-    </script>
-
     <script id="template-discover" type="text/x-handlebars-template">
+        <div class="discover-page">
+        </div>
     </script>
 
 
@@ -108,6 +120,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/js/green-audio-player.min.js"></script>
-    <script src="js/script.js" type="module"></script>
+    <script src="js/app.js" type="module"></script>
 </body>
 </html>

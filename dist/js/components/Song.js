@@ -1,16 +1,20 @@
-import {select, templates} from './../settings.js';
+import {templates} from './../settings.js';
 import utils from './../utils.js';
 
+//wzór tego jak ma wyglądać obiekt dla pojedyńczej Song
 class Song {
-  constructor(id, data){
+  constructor(id, data, wrapper){
     const thisSong = this;
 
     thisSong.id = id;
     thisSong.data = data;
+    thisSong.wrapper = wrapper;
 
     thisSong.renderInPage();
 
   }
+
+  //wygenerowanie Songs (wszytskich instanci klasy) na stronie Home
   renderInPage(){
     const thisSong = this;
 
@@ -20,8 +24,8 @@ class Song {
     /* create element using utils.createElementFromHTML */
     thisSong.element = utils.createDOMFromHTML(generatedHTML);
 
-    /* find songs list container */
-    const songsListContainer = document.querySelector(select.containerOf.home);
+    /* find songs list containers */
+    const songsListContainer = document.querySelector(thisSong.wrapper);
 
     /* add element to list */
     songsListContainer.appendChild(thisSong.element);
