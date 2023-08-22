@@ -64,15 +64,24 @@ class Search{
 
     // eslint-disable-next-line no-undef
     GreenAudioPlayer.init({
-      selector: '.player', // inits Green Audio Player on each audio container that has class "player"
+      selector: '#search .player', // inits Green Audio Player on each audio container that has class "player"
       stopOthersOnPlay: true
     });
+
   }
 
   resetSongSearch(){
     const thisSearch = this;
 
     thisSearch.SerchedSongsList = [];
+
+    thisSearch.dom.seachedSongs = thisSearch.dom.wrapper.querySelectorAll(select.containerOf.songid);
+ 
+    if (thisSearch.dom.seachedSongs != null){
+      for (const searchedSong of thisSearch.dom.seachedSongs){
+        thisSearch.dom.wrapper.removeChild(searchedSong);
+      }
+    }
   }
 }
 

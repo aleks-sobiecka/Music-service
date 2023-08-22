@@ -5,6 +5,7 @@ export const select = {
     search: '#search-wrapper',
     song: '#song-wrapper',
     discover: '#discover-wrapper',
+    songid: '#song',
   },
   templateOf: {
     home: '#template-home',

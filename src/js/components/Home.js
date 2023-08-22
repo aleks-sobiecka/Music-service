@@ -32,7 +32,7 @@ class Home{
 
     // eslint-disable-next-line no-undef
     GreenAudioPlayer.init({
-      selector: '.player', // inits Green Audio Player on each audio container that has class "player"
+      selector: '#home .player', // inits Green Audio Player on each audio container that has class "player"
       stopOthersOnPlay: true
     });
 

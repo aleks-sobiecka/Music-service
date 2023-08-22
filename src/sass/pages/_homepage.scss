@@ -99,12 +99,16 @@
   color: $secondaryColor;
 }
 
-.join-now button {
+.join-now a {
   font-size: 40px;
   height: 133px;
   width: 313px;
   letter-spacing: 5px;
   line-height: 16px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .picture {
